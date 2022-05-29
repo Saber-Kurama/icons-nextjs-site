@@ -18,14 +18,25 @@ export default function LeftMenu(props) {
       <div
         className={`${styles["iconbox-group-anchor"]} ${styles["iconbox-group-anchor-align-left"]}`}
       >
-        <Button type="primary">Primary</Button>
+        {/* <Button type="primary">Primary</Button> */}
+        {/* href: "#".concat(lf(r)),
+                key: r.id,
+                title: r.name, */}
         <Anchor
           affix={false}
-          boundary={146}
+          boundary={boundary}
           lineless={true}
           className={styles["iconbox-group-anchor-anchor"]}
         >
-          <AnchorLink href='#Basic' title='Basic'></AnchorLink>
+          {groupList.map((group: any) => {
+            return (
+              <AnchorLink
+                href={`#${group.id}-${group.name}`}
+                key={group.id}
+                title={group.name}
+              ></AnchorLink>
+            );
+          })}
         </Anchor>
       </div>
     </Affix>

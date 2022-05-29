@@ -1,0 +1,35 @@
+.iconbox-wrapper {
+  overflow-x: hidden;
+}
+.iconbox-group {
+  width: 100%;
+  padding-top: 24px;
+}
+.iconbox-group-title {
+  display: flex;
+  padding-bottom: 12px;
+}
+.iconbox-group-title-dropdown{
+  opacity: 0;
+}
+.iconbox-group-title:hover .iconbox-group-title-dropdown,
+.iconbox-group-title-hover .iconbox-group-title-dropdown{
+  opacity: 1;
+}
+.iconbox-group-icon-list {
+  display: grid;
+  grid-gap: 7px 7px;
+  justify-content: space-between;
+  grid-template-columns: repeat(auto-fill, 118px);
+}
+.iconbox-group-icon-list-simple{
+  display: grid;
+  grid-gap: 7px 7px;
+  justify-content: space-between;
+  grid-template-columns: repeat(auto-fill, 58px);
+}
+.iconbox-group-empty-content {
+  color: var(--color-text-2);
+  margin: 24px 0;
+  font-size: 12px;
+}

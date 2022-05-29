@@ -5,8 +5,17 @@ import { Spin } from "@arco-design/web-react";
 import GroupTitle from "../components/GroupTitle";
 import IconCard from "../components/IconCard";
 import LeftMenu from "../components/LeftMenu";
+import DetailContent from "../components/DetailContent";
+import dataInfo from "../data/info";
+import { useState } from "react";
 
 export default function Index() {
+  const groupIconLisg = dataInfo;
+  const [siderGroupList, setSiderGroupList] = useState(
+    dataInfo.data.groupInfoList
+  );
+  const [collapsed, setCollapsed] = useState(false);
+  const [triggerVisible, setTriggerVisible] = useState(false);
   return (
     <div className={styles.container}>
       <Head>
@@ -16,27 +25,35 @@ export default function Index() {
       </Head>
 
       <main className={styles.main}>
-        <div>这是一个头部</div>
-        <Spin style={{ display: "block" }} loading={false}>
-         <div className={styles['iconbox-lib-detail-content']}>
-           <div className={styles['iconbox-lib-detail-content-sider']}>
-             <div style={{maxWidth: 180}}>
-               <LeftMenu></LeftMenu>
-             </div>
-           </div>
-           <div className={styles['iconbox-lib-detail-content-body']}></div>
-         </div>
-        </Spin>
+        <div>官方图标</div>
+        <div className={styles["iconbox-lib-detail-container"]}>
+          <div className={styles["iconbox-lib-detail-banner"]}></div>
+          <Spin style={{ display: "block" }} loading={false}>
+            <div className={styles["iconbox-lib-detail-content"]}>
+              <div className={styles["iconbox-lib-detail-content-sider"]}>
+                <div style={{ maxWidth: 180 }}>
+                  <LeftMenu
+                    groupList={siderGroupList}
+                    collapsed={collapsed}
+                    offsetTop={146}
+                    boundary={146}
+                    triggerVisible={triggerVisible}
+                    onCollapseChange={() => {}}
+                  ></LeftMenu>
+                </div>
+              </div>
+              <div className={styles["iconbox-lib-detail-content-body"]}>
+                <div
+                  style={{ marginLeft: 144, marginRight: 94 }}
+                  className={styles["iconbox-lib-detail-content-body-inner"]}
+                >
+                  <DetailContent></DetailContent>
+                </div>
+              </div>
+            </div>
+          </Spin>
+        </div>
       </main>
     </div>
   );
 }
-
-{/* <div className={styles["iconbox-wrapper"]}>
-<div className={styles["iconbox-group"]}>
-  <GroupTitle />
-  <div className={styles["iconbox-group-icon-list"]}>
-    <IconCard />
-  </div>
-</div>
-</div> */}
