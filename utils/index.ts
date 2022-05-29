@@ -25,39 +25,6 @@ export const getGroupIconList = (iconList, groupInfoList) => {
   );
 };
 
-function V_(e) {
-  return new Promise((r) => {
-    let n;
-    if (((t = e), "[object String]" === B_.call(t))) {
-      const r = document.createElement("div");
-      (r.style.display = "none"), (r.innerHTML = e), (n = r.firstElementChild);
-    } else n = e;
-    var t;
-    const o = document.createElement("canvas"),
-      a = o.getContext("2d"),
-      i = new XMLSerializer().serializeToString(n),
-      c = "data:image/svg+xml;base64,".concat(
-        btoa(unescape(encodeURIComponent(i)))
-      ),
-      l = new Image();
-    (l.onload = () => {
-      const e = 200;
-      let { width: n, height: t } = U_(i);
-      n >= t ? ((t *= e / n), (n = e)) : ((n *= e / n), (t = e)),
-        (o.width = n),
-        (o.height = t),
-        null == a || a.drawImage(l, 0, 0, n, t);
-      const c = o.toDataURL();
-      o.toBlob((e) => {
-        r({
-          url: c,
-          blob: e,
-        });
-      });
-    }),
-      (l.src = c);
-  });
-}
 
 function strequalRegExp(str) {
   return new RegExp("".concat(str, '="(.*?)"'))
