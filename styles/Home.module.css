@@ -1,13 +1,77 @@
 .main {
   min-height: 100vh;
-  padding: 4rem 0;
+  padding: 8px;
   flex: 1;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  /* justify-content: center;
+  align-items: center; */
 }
 
+.iconbox-lib-detail-container {
+  padding: 86px 0 97px 0;
+}
+.iconbox-lib-detail-banner {
+  background-color: var(--color-fill-2);
+  padding: 15px 0;
+  position: fixed;
+  top: 60px;
+  left: 0;
+  width: 100%;
+  z-index: 1;
+}
+.iconbox-lib-detail-banner-inner {
+  display: flex;
+  justify-content: space-between;
+  width: 1180px;
+  margin: 0 auto;
+}
+.iconbox-lib-detail-banner :global(.arco-input-inner-wrapper:not(.arco-input-inner-wrapper-focus)),
+.iconbox-lib-detail-banner :global(.arco-btn-secondary:not(.arco-btn-disabled)),
+.iconbox-lib-detail-banner .iconbox-iconbox-tag {
+  background-color: var(--color-bg-2);
+}
+.iconbox-lib-detail-banner :global(.arco-radio-button::after) {
+  background-color: var(--color-fill-3);
+}
+.iconbox-lib-detail-content {
+  position: relative;
+}
+.iconbox-lib-detail-content-sider{
+  position: sticky;
+  height: 0;
+  z-index: 1;
+  width: fit-content;
+}
+.iconbox-lib-detail-content-body {
+  padding: 0 36px;
+}
+.iconbox-lib-detail-content-body-inner {
+  max-width: 1180px;
+  margin: 0 auto;
+}
+.iconbox-lib-detail-name {
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--color-text-1);
+}
+.iconbox-lib-detail-avatar {
+  filter: drop-shadow(0px 10px 20px rgba(41, 41, 42, 0.07));
+}
+.iconbox-lib-detail-time{
+  font-size: 12px;
+}
+body[arco-theme='dark'] .iconbox-lib-detail-banner {
+  background: #29292c;
+}
+body[arco-theme='dark'] .arco-radio-button::after{
+  background-color: var(--color-bg-2);
+}
+
+
+/*
+ *
+ */
 .iconbox-wrapper {
   overflow-x: hidden;
 }

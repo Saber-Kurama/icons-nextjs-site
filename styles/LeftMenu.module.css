@@ -1,0 +1,33 @@
+.iconbox-group-anchor {
+  padding: 24px 10px 0 70px;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+.iconbox-group-anchor-anchor {
+  margin-top: 20px;
+  width: 100%;
+}
+.iconbox-group-anchor-collapsed {
+  width: 0px;
+}
+.iconbox-group-anchor-collapsed .iconbox-group-anchor-anchor {
+  display: none;
+}
+.iconbox-group-anchor-collapsed .iconbox-group-anchor-trigger {
+  background-color: var(--color-bg-5);
+  box-shadow: -1px 0 5px 0 rgba(0, 0, 0, 0.1);
+}
+.iconbox-group-anchor-align-left.iconbox-group-anchor-collapsed .iconbox-group-anchor-trigger {
+  width: 28px;
+  position: fixed;
+  left: 0;
+  border-radius: 0px 18px 18px 0px;
+  z-index: 1;
+}
+.iconbox-group-anchor-align-right.iconbox-group-anchor-collapsed .iconbox-group-anchor-trigger {
+  width: 28px;
+  position: fixed;
+  right: 0;
+  border-radius: 18px 0px 0px 18px;
+  z-index: 1;
+}
