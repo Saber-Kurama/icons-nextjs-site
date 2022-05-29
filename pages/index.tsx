@@ -10,6 +10,7 @@ import dataInfo from "../data/info";
 import iconsJson from '../data/icons.json'
 import { useState } from "react";
 import { getGroupIconList } from "../utils";
+import PortalNavbar from "../components/PortalNavbar";
 
 export default function Index() {
  
@@ -28,7 +29,9 @@ export default function Index() {
       </Head>
 
       <main className={styles.main}>
-        <div>官方图标</div>
+        <div>
+          <PortalNavbar />
+        </div>
         <div className={styles["iconbox-lib-detail-container"]}>
           <div className={styles["iconbox-lib-detail-banner"]}></div>
           <Spin style={{ display: "block" }} loading={false}>

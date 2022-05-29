@@ -1,0 +1,45 @@
+.iconbox-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 9;
+}
+.iconbox-content {
+  padding-top: 60px;
+}
+
+.iconbox-header {
+  height: 60px;
+  padding: 0 80px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  background-color: hsla(0, 0%, 100%, 0.8);
+  backdrop-filter: blur(20px);
+}
+.iconbox-header-left {
+  width: 176px;
+}
+.iconbox-header-left > * {
+  max-height: 100%;
+  max-width: 100%;
+}
+.iconbox-header-right {
+  flex: 1;
+}
+.iconbox-header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.iconbox-header-content-left {
+  flex: 1;
+}
+.iconbox-header-content-right {
+  flex: 0 0 auto;
+}
+body[arco-theme='dark'] .iconbox-header-TDGAY {
+  background: rgba(32, 32, 34, 0.8);
+  backdrop-filter: blur(40px);
+}
