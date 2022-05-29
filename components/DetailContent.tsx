@@ -14,11 +14,11 @@ export default function DetailContent(props) {
           const { group, icons } = data;
           if (!icons.length) return null;
           return (
-            <div id={`#${group.id}-${group.name}`} key={data.index} className={styles["iconbox-group"]}>
+            <div id={`${group.id}-${group.name}`} key={data.index} className={styles["iconbox-group"]}>
               <GroupTitle groupIconInfo={data}/>
               <div className={styles["iconbox-group-icon-list"]}>
                 {icons.map((icon, index) => {
-                  return <IconCard key={index} />;
+                  return <IconCard key={index} iconInfo={icon} />;
                 })}
               </div>
             </div>
