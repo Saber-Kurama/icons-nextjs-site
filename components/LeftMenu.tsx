@@ -19,9 +19,6 @@ export default function LeftMenu(props) {
         className={`${styles["iconbox-group-anchor"]} ${styles["iconbox-group-anchor-align-left"]}`}
       >
         {/* <Button type="primary">Primary</Button> */}
-        {/* href: "#".concat(lf(r)),
-                key: r.id,
-                title: r.name, */}
         <Anchor
           affix={false}
           boundary={boundary}

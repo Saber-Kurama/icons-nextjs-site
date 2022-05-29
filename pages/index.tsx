@@ -7,15 +7,18 @@ import IconCard from "../components/IconCard";
 import LeftMenu from "../components/LeftMenu";
 import DetailContent from "../components/DetailContent";
 import dataInfo from "../data/info";
+import iconsJson from '../data/icons.json'
 import { useState } from "react";
+import { getGroupIconList } from "../utils";
 
 export default function Index() {
-  const groupIconLisg = dataInfo;
+ 
   const [siderGroupList, setSiderGroupList] = useState(
     dataInfo.data.groupInfoList
   );
   const [collapsed, setCollapsed] = useState(false);
   const [triggerVisible, setTriggerVisible] = useState(false);
+  const groupIconList = getGroupIconList(iconsJson.data.list, dataInfo.data.groupInfoList);
   return (
     <div className={styles.container}>
       <Head>
@@ -47,7 +50,7 @@ export default function Index() {
                   style={{ marginLeft: 144, marginRight: 94 }}
                   className={styles["iconbox-lib-detail-content-body-inner"]}
                 >
-                  <DetailContent></DetailContent>
+                  <DetailContent groupIconList={groupIconList}></DetailContent>
                 </div>
               </div>
             </div>
