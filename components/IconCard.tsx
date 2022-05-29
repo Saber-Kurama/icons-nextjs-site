@@ -3,6 +3,7 @@ import { IconDown } from "@arco-design/web-react/icon";
 import { useRef } from "react";
 import copy from 'copy-to-clipboard';
 import styles from "../styles/IconCard.module.css";
+import { svg2png } from "../utils";
 
 export default function IconCard(props) {
   const { iconInfo, selectable, actions, onExportClick } = props;
@@ -26,11 +27,23 @@ export default function IconCard(props) {
   //     copyVue: !0
   // }, u),
   const svgHtml = iconInfo.src;
+  async function copySvg(e, name) {
+    const n = await copy(e);
+    Message.success({
+        content: "复制 ".concat(name, " SVG ").concat(n ? "成功" : "失败"),
+        type: n ? "success" : "error"
+    })
+}
   const handlerList: any[] = [
     {
       key: "copyReact",
       name: "复制 React 代码",
       handler: () => {
+        const str = "<".concat(iconInfo.name.trim().replace(/[^a-zA-Z0-9]/g, "-").replace(/(?<=\b)([a-z])/g, ((e, r) => r.toUpperCase())).replace(/-/g, ""), " />");
+        copy(str);
+        Message.success({
+            content: "React 代码: ".concat(str, " 复制成功")
+        })
       },
     },
     {
@@ -48,12 +61,42 @@ export default function IconCard(props) {
       key: "copySvg",
       name: "复制 SVG",
       handler: () => {
+        copySvg(svgHtml, iconInfo.nameCn)
       },
     },
     {
       key: "copyPng",
       name: "复制 PNG",
       handler: () => {
+        (async (e: any) => {
+          let imgBlob = null;
+          if (e.imageBlob) {
+             imgBlob = e.imageBlob;
+          }else if (e.svgCode) {
+            const {
+                blob
+            } = await svg2png(e.svgCode);
+            imgBlob = blob;
+          }
+          if (imgBlob) {
+            try {
+              const clipboardItem = new ClipboardItem({
+                  "image/png": imgBlob
+              });
+              await navigator.clipboard.write([clipboardItem]),
+              Message.success({
+                  content: "复制 ".concat(e.name, " PNG 成功"),
+              })
+          } catch (err) {
+              Message.error({
+                  content: "复制 ".concat(e.name, " PNG 失败"),
+              })
+          }
+          }
+        })({
+          svgCode: svgHtml,
+          name: iconInfo.nameCn
+      })
       },
     },
     {

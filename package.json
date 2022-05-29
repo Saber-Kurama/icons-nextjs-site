@@ -9,8 +9,6 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@arco-design/web-react": "^2.34.0",
-    "@dangojs/arco-portal-navbar-webcomponent": "^0.0.7",
     "copy-to-clipboard": "^3.3.1",
     "next": "12.1.6",
     "react": "18.1.0",
