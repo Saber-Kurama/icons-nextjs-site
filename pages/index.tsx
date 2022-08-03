@@ -6,7 +6,7 @@ import GroupTitle from "../components/GroupTitle";
 import IconCard from "../components/IconCard";
 import LeftMenu from "../components/LeftMenu";
 import DetailContent from "../components/DetailContent";
-import dataInfo from "../data/info";
+import dataInfo from "../data/info.json";
 import iconsJson from '../data/icons.json'
 import { useState } from "react";
 import { getGroupIconList } from "../utils";
