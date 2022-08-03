@@ -36,8 +36,8 @@
 
 
 .iconbox-icon-box {
-  width: 118px;
-  height: 118px;
+  width: 226px;
+  height: 66px;
   overflow: hidden;
   border: 1px solid var(--color-border-1);
   box-sizing: border-box;
@@ -49,30 +49,34 @@
   justify-content: center;
   align-items: center;
   border-radius: 0px;
+  padding: 0 12px;
 }
 .iconbox-icon-box-icon {
-  margin: 0 auto;
+  width: 36px;
+  height: 36px;
+  /* margin: 0 auto;
   height: 24px;
   max-width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: -12px;
+  margin-top: -12px; */
 }
 .iconbox-icon-box-icon > svg {
   width: inherit;
   height: inherit;
 }
 .iconbox-icon-box-text {
-  position: absolute;
+  /* position: absolute; */
+  flex: 1;
   bottom: 6px;
   left: 0;
   width: 100%;
   padding: 0 4px;
   font-size: 12px;
   box-sizing: border-box;
-  color: var(--color-text-1);
-  text-align: center;
+  color: #999;
+  text-align: left;
   text-overflow: ellipsis;
   overflow: hidden;
 }

@@ -47,7 +47,7 @@
   padding: 0 36px;
 }
 .iconbox-lib-detail-content-body-inner {
-  max-width: 1180px;
+  /* max-width: 1180px; */
   margin: 0 auto;
 }
 .iconbox-lib-detail-name {

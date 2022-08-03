@@ -20,7 +20,7 @@
   display: grid;
   grid-gap: 7px 7px;
   justify-content: space-between;
-  grid-template-columns: repeat(auto-fill, 118px);
+  grid-template-columns: repeat(auto-fill, 240px);
 }
 .iconbox-group-icon-list-simple{
   display: grid;

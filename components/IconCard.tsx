@@ -138,11 +138,13 @@ export default function IconCard(props) {
         }}
       >
         <div className={styles["iconbox-icon-box"]} ref={iconBoxRef}>
-          <Spin loading={false} size={46}>
+          {/* <Spin loading={false} size={46}> */}
             <div className={styles["iconbox-icon-box-icon"]} dangerouslySetInnerHTML={{__html: svgHtml}}></div>
-          </Spin>
-          <div className={styles["iconbox-icon-box-text"]} style={{bottom: '22px'}}>{iconInfo.name}</div>
-          <div className={styles["iconbox-icon-box-text"]}>{iconInfo.nameCn}</div>
+          {/* </Spin> */}
+          <div style={{flex: 1, marginLeft: '12px'}}>
+            <div className={styles["iconbox-icon-box-text"]} style={{fontSize: '14px', color: '#333', marginBottom: '3px'}}>{iconInfo.nameCn}</div>
+            <div className={styles["iconbox-icon-box-text"]}>{iconInfo.name}</div>
+          </div>
         </div>
       </Dropdown>
     </div>
